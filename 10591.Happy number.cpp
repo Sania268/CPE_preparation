@@ -2,40 +2,49 @@
 #include <set>
 using namespace std;
 
-int main () {
-  int T, n, cas = 1;
-  cin >> T;
+int main() {
+    int T, n, cas = 1;
+    cin >> T;
 
-  while (T--) {
-    set<int>all;
-    cin >> n;
-    int original = n;
+    while (T--) {
+        set<int> all;
 
-    while (n != 1) {
-      int sum = 0;
-      
-     if (all.count(n))
-      break;
-      
-      all.insert(n);
+        cin >> n;
+        int original = n;
 
-      while (n > 0) {
-        int digit = n % 10;
-        sum += digit * digit;
-        n/= 10;
-      }
-      n = sum;
+        while (n != 1) {
+            int sum = 0;
+
+            // If we see the same number again, we are in a cycle.
+            if (all.count(n))
+                break;
+
+            // Remember this number.
+            all.insert(n);
+
+            // Separate the digits and calculate the sum of their squares.
+            while (n > 0) {
+                int digit = n % 10;
+                sum += digit * digit;
+                n /= 10;
+            }
+
+            // Use the new sum as the next number.
+            n = sum;
+        }
+
+        // n == 1 means the sequence reached 1.
+        if (n == 1) {
+            cout << "Case #" << cas << ": "
+                 << original << " is a Happy number." << endl;
+        }
+        else {
+            cout << "Case #" << cas << ": "
+                 << original << " is an Unhappy number." << endl;
+        }
+
+        cas++;
     }
 
-    if (n == 1) {
-      cout << "Cas #" << cas << ": " << original << " is a Happy number." << endl;
-    }
-    else {
-      cout << "cas #" << cas << ": " << original << " is an Unhappy number."<< endl;
-    }
-    cas++;
-    
-  }
-  return 0;
+    return 0;
 }
-
