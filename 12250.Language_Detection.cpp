@@ -6,7 +6,7 @@ int main () {
 string s;
   int T = 0;
   while (cin >> s && s != "#") {
-    cout << "Case "<< ++T << ": " << endl;
+    cout << "Case "<< ++T << ": ";
     if (s == "HELLO") {
         cout << "ENGLISH" << endl;
     } else if (s == "HOLA") {
