@@ -16,7 +16,7 @@ int main () {
   while (cin >> n) {
     for (int i = 0; i < n; i++) {
       if (a[i] >= n) {
-        cout << "Cas " << cas << ": "<< i << endl;
+        cout << "Case " << cas << ": "<< i << endl;
         cas++;
         break;
       }
