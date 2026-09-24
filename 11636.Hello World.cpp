@@ -13,7 +13,7 @@ int main () {
   int cas = 1;
   int n;
 
-  while (cin >> n) {
+  while (cin >> n && n >= 0) {
     for (int i = 0; i < n; i++) {
       if (a[i] >= n) {
         cout << "Case " << cas << ": "<< i << endl;
