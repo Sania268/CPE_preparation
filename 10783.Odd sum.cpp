@@ -2,5 +2,20 @@
 using namespace std;
 
 int main () {
-  return 0;
+    int T, cas = 1;
+    cin >> T;
+    while (T--) {
+        int a, b;
+        cin >> a >> b;
+        int sum = 0;
+        
+        for (int i = a; i <= b;i++) {
+            if (i % 2 != 0) {
+                sum += i;
+            }
+        }
+        cout << "Case "<< cas << ": " << sum << endl;
+        cas++;
+    }
+    return 0;
 }
