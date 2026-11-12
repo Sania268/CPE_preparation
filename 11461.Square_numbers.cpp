@@ -1,6 +1,20 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int main () {
-  return 0;
+    int a, b;
+    while(cin >> a >> b && (a != 0 || b != 0)) {
+        int count = 0;
+        
+        for (int i = a; i <= b; i++) {
+            int root = sqrt(i);
+            if (root * root == i) {
+                count++;
+            }
+        }
+        cout << count << endl;
+    }
+    return 0;
 }
