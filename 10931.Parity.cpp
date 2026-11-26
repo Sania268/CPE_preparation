@@ -14,8 +14,6 @@ int main () {
        
        string binary = "";
        
-       // keep the original number available if needed
-      int original = n;
       
       //convert the number to binary 
       
@@ -37,7 +35,7 @@ int main () {
       // The bits were collected backward, so reverse them
       reverse(binary.begin(), binary.end());
        
-       cout << "The parity of "<< binary << " is " << count << " (mod 2).";
+       cout << "The parity of "<< binary << " is " << count << " (mod 2)." << endl;
    }
     return 0;
 }
